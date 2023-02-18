@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Favicons -->
     <meta name="theme-color" content="#712cf9">
@@ -73,10 +74,15 @@
 <div class="container">
     <h1>@yield('title')</h1>
     <main>
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if(session('danger'))
+            <div class="alert alert-danger">{{ session('danger') }}</div>
+        @endif
         @yield('content')
     </main>
 </div>
-
 
 
 <script src="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.js"></script>

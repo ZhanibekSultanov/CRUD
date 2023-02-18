@@ -37,7 +37,11 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <button type="submit" class="btn btn-success">Create</button>
+                @if($user)
+                    <button type="submit" class="btn btn-success">Update</button>
+                @else
+                    <button type="submit" class="btn btn-success">Create</button>
+                @endif
             </div>
         </div>
     </form>
